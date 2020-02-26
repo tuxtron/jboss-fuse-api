@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features>
+	<feature name='smg-feature-mobile-addons' version='1.0.0-SNAPSHOT'>
+        
+		<bundle><![CDATA[wrap:mvn:com.sybase/jconn3/6.0.26732]]></bundle>
+		<bundle><![CDATA[wrap:mvn:com.googlecode.json-simple/json-simple/1.1]]></bundle>
+		
+		<feature version="2.15.1.redhat-621084">camel-jackson</feature>		
+		<feature version="2.15.1.redhat-621084">camel-xmljson</feature>		
+		<feature version="2.15.1.redhat-621084">camel-http4</feature>
+		<feature version="2.15.1.redhat-621084">camel-jsonpath</feature>
+		<feature version="3.0.4.redhat-621084">cxf-rs-security-cors</feature>	
+		<feature version="3.2.12.RELEASE_2">spring-web</feature>		
+		<feature version="1.0.0">jndi</feature>		
+		<feature version="2.15.1.redhat-621084">camel-mybatis</feature>		
+		<feature version="3.2.12.RELEASE_2">spring-jdbc</feature>
+					
+		<bundle>mvn:org.mybatis/mybatis-spring/1.2.3</bundle>	
+		<bundle>mvn:commons-dbcp/commons-dbcp/1.4</bundle>
+		
+		<!-- BUNDLES PARA JACKSON Y SERIALIZACION DE JSON -->
+		<bundle>mvn:org.codehaus.jackson/jackson-core-asl/1.9.0</bundle>
+		<bundle>mvn:org.codehaus.jackson/jackson-mapper-asl/1.9.0</bundle>
+		<bundle>mvn:org.codehaus.jackson/jackson-jaxrs/1.9.0</bundle>
+		<bundle>mvn:org.codehaus.jackson/jackson-xc/1.9.0</bundle>
+
+		<bundle>mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.4.0</bundle>
+		<bundle>mvn:com.fasterxml.jackson.core/jackson-annotations/2.4.0</bundle>
+		<bundle>mvn:com.fasterxml.jackson.core/jackson-core/2.4.0</bundle>
+		<bundle>mvn:com.fasterxml.jackson.core/jackson-databind/2.4.0</bundle>
+		<bundle>mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/2.4.0</bundle>
+		
+		<bundle>mvn:org.apache.cxf/cxf-rt-rs-security-cors/3.0.4.redhat-621084</bundle>
+		<bundle>mvn:org.apache.cxf/cxf-rt-frontend-jaxrs/3.0.4.redhat-621084</bundle>
+		<bundle>mvn:org.bouncycastle/bcprov-jdk15on/1.53</bundle>
+		<bundle>mvn:org.bouncycastle/bcpkix-jdk15on/1.53</bundle>		
+
+		<!-- No se necesita dependencia de feature para velocity en este proyecto -->
+		<bundle>mvn:org.apache.camel/camel-velocity/2.15.1.redhat-621084</bundle>
+
+        <bundle><![CDATA[wrap:mvn:net.minidev/json-smart/1.3.1]]></bundle>        
+        <bundle><![CDATA[wrap:mvn:net.jcip/jcip-annotations/1.0]]></bundle>
+        <bundle><![CDATA[wrap:mvn:com.nimbusds/nimbus-jose-jwt/4.12]]></bundle>
+      
+        <bundle><![CDATA[wrap:mvn:com.atomikos/transactions-api/3.9.3]]></bundle>
+		<bundle><![CDATA[wrap:mvn:com.atomikos/transactions-jdbc/3.9.3]]></bundle>
+		<bundle><![CDATA[wrap:mvn:com.atomikos/transactions-jta/3.9.3]]></bundle>
+		<bundle><![CDATA[wrap:mvn:com.atomikos/atomikos-util/3.9.3]]></bundle>
+		<bundle><![CDATA[wrap:mvn:com.atomikos/transactions-osgi/3.9.3]]></bundle>
+				
+	</feature>
+
+</features>

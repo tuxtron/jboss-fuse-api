@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Build-Timestamp: 20161118-1617
+Implementation-Title: ESB Features
+Implementation-Version: 1.0.0-ALPHA.5
+Built-By: SRV-EIC$
+Created-By: Apache Maven 3.0.4
+artifactId: smg-esb-features-mobile
+version: 1.0.0-ALPHA.5
+Implementation-Vendor-Id: ar.com.smg.esb
+Build-Jdk: 1.7.0_03
+Specification-Title: ESB Features
+groupId: ar.com.smg.esb
+Specification-Version: 1.0.0-ALPHA.5
+Archiver-Version: Plexus Archiver
+
