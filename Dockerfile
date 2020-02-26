@@ -1,23 +1,23 @@
-FROM tuxtron/jboss-fuse-final
+FROM jboss-smg/jboss-fuse-final
 
 # User root user to install software
-USER root
+#USER root
 
 #copiar configuración
 COPY conf /opt/jboss/jboss-full/config/
-
+RUN svn checkout http://lv36papf-svncorp.swm.com.ar:8888/svn/swiss/NuevosProductos/operaciones/prepare-for-deploy/trunk/deploy-ot/fuse-properties/OPENSHIFT-DEV-MOBILE-BCK-NODO1 /opt/jboss/jboss-full/etc/ --username Ramon-Fernandez --password rf637
 
 #dependencias
-COPY pom.xml /opt/jboss/jboss-full/
+#COPY pom.xml /opt/jboss/jboss-full/
 
 #script de instalacion de dependencias
-COPY script.sh /opt/jboss/jboss-full/
+#COPY script.sh /opt/jboss/jboss-full/
 
 #RUN mvn install -f /opt/jboss/jboss-full/pom.xml
-RUN chmod +x /opt/jboss/jboss-full/script.sh
+#RUN chmod +x /opt/jboss/jboss-full/script.sh
 
-COPY deploy/sqljdbc41.jar /opt/jboss/jboss-full/deploy/
-COPY deploy/jconn3-6.0.26312.jar /opt/jboss/jboss-full/deploy/
+#COPY deploy/sqljdbc41.jar /opt/jboss/jboss-full/deploy/
+#COPY deploy/jconn3-6.0.26312.jar /opt/jboss/jboss-full/deploy/
 #WORKDIR /opt/jboss/jboss-full/deploy
 #RUN mvn install:install-file -Dfile=sqljdbc41.jar -Dpackaging=jar -DgroupId=com.microsoft.sqlserver -DartifactId=sqljdbc4 -Dversion=4.0
 #RUN mvn install:install-file -Dfile=jconn3-6.0.26312.jar -Dpackaging=jar -DgroupId=com.sybase -DartifactId=jconn3 -Dversion=6.0.26312
@@ -25,7 +25,7 @@ COPY deploy/jconn3-6.0.26312.jar /opt/jboss/jboss-full/deploy/
 #RUN /opt/jboss/jboss-full/script.sh
 
 #copiar jar
-COPY deploy /opt/jboss/jboss-full/deploy/
+#COPY deploy /opt/jboss/jboss-full/deploy/
 
 
 EXPOSE 8181 8101 18181 1099 44444 61616 1883 5672 61613 61617 8883 5671 61614
