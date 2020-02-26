@@ -1,4 +1,4 @@
-FROM jboss-smg/jboss-fuse-final
+FROM fuse-smg/jboss-fuse-final
 
 # User root user to install software
 #USER root
