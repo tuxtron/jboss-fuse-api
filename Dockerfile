@@ -1,4 +1,4 @@
-FROM fuse-smg/jboss-fuse-final
+FROM default-route-openshift-image-registry.apps.ocp-rc1.swm.com.ar/fuse-smg/jboss-fuse-final
 
 # User root user to install software
 #USER root
