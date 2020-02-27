@@ -4,7 +4,8 @@ FROM docker.io/tuxtron/api-final
 #USER root
 
 #copiar configuración
-COPY conf /opt/jboss/jboss-full/config/
+COPY org.ops4j.pax.url.mvn.cfg /opt/jboss/jboss-full/etc/org.ops4j.pax.url.mvn.cfg
+COPY conf /opt/jboss/jboss-full/etc/
 #RUN svn checkout http://lv36papf-svncorp.swm.com.ar:8888/svn/swiss/NuevosProductos/operaciones/prepare-for-deploy/trunk/deploy-ot/fuse-properties/OPENSHIFT-DEV-MOBILE-BCK-NODO1 /opt/jboss/jboss-full/etc/ --username Ramon-Fernandez --password rf637
 
 #dependencias
@@ -18,9 +19,11 @@ COPY script.sh /opt/jboss/jboss-full/
 
 COPY deploy/sqljdbc41.jar /opt/jboss/jboss-full/deploy/
 COPY deploy/jconn3-6.0.26312.jar /opt/jboss/jboss-full/deploy/
+COPY deploy/smg-esb-features-mobile-1.0.0-ALPHA.5 /opt/jboss/jboss-full/deploy/
 WORKDIR /opt/jboss/jboss-full/deploy
 RUN mvn install:install-file -Dfile=sqljdbc41.jar -Dpackaging=jar -DgroupId=com.microsoft.sqlserver -DartifactId=sqljdbc4 -Dversion=4.0
 RUN mvn install:install-file -Dfile=jconn3-6.0.26312.jar -Dpackaging=jar -DgroupId=com.sybase -DartifactId=jconn3 -Dversion=6.0.26312
+RUN mvn install:install-file -Dfile=smg-esb-features-mobile-1.0.0-ALPHA.5.jar -Dpackaging=jar -DgroupId=smg.esb.features.mobile -DartifactId=smg-esb-features-mobile -Dversion=4.0
 
 #RUN /opt/jboss/jboss-full/script.sh
 
