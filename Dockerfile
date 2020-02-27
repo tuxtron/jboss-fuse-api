@@ -9,25 +9,25 @@ COPY conf /opt/jboss/jboss-full/etc/
 #RUN svn checkout http://lv36papf-svncorp.swm.com.ar:8888/svn/swiss/NuevosProductos/operaciones/prepare-for-deploy/trunk/deploy-ot/fuse-properties/OPENSHIFT-DEV-MOBILE-BCK-NODO1 /opt/jboss/jboss-full/etc/ --username Ramon-Fernandez --password rf637
 
 #dependencias
-COPY pom.xml /opt/jboss/jboss-full/
+#COPY pom.xml /opt/jboss/jboss-full/
 
 #script de instalacion de dependencias
-COPY script.sh /opt/jboss/jboss-full/
+#COPY script.sh /opt/jboss/jboss-full/
 
 #RUN chmod +x /opt/jboss/jboss-full/script.sh
 
-COPY deploy/sqljdbc41.jar /opt/jboss/jboss-full/deploy/
-COPY deploy/jconn3-6.0.26312.jar /opt/jboss/jboss-full/deploy/
-COPY deploy/smg-esb-features-mobile-1.0.0-ALPHA.5 /opt/jboss/jboss-full/deploy/
-WORKDIR /opt/jboss/jboss-full/deploy
-RUN mvn install:install-file -Dfile=sqljdbc41.jar -Dpackaging=jar -DgroupId=com.microsoft.sqlserver -DartifactId=sqljdbc4 -Dversion=4.0
-RUN mvn install:install-file -Dfile=jconn3-6.0.26312.jar -Dpackaging=jar -DgroupId=com.sybase -DartifactId=jconn3 -Dversion=6.0.26312
-RUN mvn install:install-file -Dfile=smg-esb-features-mobile-1.0.0-ALPHA.5.jar -Dpackaging=jar -DgroupId=smg.esb.features.mobile -DartifactId=smg-esb-features-mobile -Dversion=4.0
+#COPY deploy/sqljdbc41.jar /opt/jboss/jboss-full/deploy/
+#COPY deploy/jconn3-6.0.26312.jar /opt/jboss/jboss-full/deploy/
+#COPY deploy/smg-esb-features-mobile-1.0.0-ALPHA.5 /opt/jboss/jboss-full/deploy/
+#WORKDIR /opt/jboss/jboss-full/deploy
+#RUN mvn install:install-file -Dfile=sqljdbc41.jar -Dpackaging=jar -DgroupId=com.microsoft.sqlserver -DartifactId=sqljdbc4 -Dversion=4.0
+#RUN mvn install:install-file -Dfile=jconn3-6.0.26312.jar -Dpackaging=jar -DgroupId=com.sybase -DartifactId=jconn3 -Dversion=6.0.26312
+#RUN mvn install:install-file -Dfile=smg-esb-features-mobile-1.0.0-ALPHA.5.jar -Dpackaging=jar -DgroupId=smg.esb.features.mobile -DartifactId=smg-esb-features-mobile -Dversion=4.0
 
-RUN mvn install -f /opt/jboss/jboss-full/pom.xml
+#RUN mvn install -f /opt/jboss/jboss-full/pom.xml
 
-RUN chmod +x /opt/jboss/jboss-full/script.sh
-RUN /opt/jboss/jboss-full/script.sh
+#RUN chmod +x /opt/jboss/jboss-full/script.sh
+#RUN /opt/jboss/jboss-full/script.sh
 
 #copiar jar
 COPY deploy /opt/jboss/jboss-full/deploy/
