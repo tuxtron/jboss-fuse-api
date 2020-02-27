@@ -4,8 +4,8 @@ FROM docker.io/tuxtron/api-final
 #USER root
 
 #copiar configuración
-#COPY conf /opt/jboss/jboss-full/config/
-RUN svn checkout http://lv36papf-svncorp.swm.com.ar:8888/svn/swiss/NuevosProductos/operaciones/prepare-for-deploy/trunk/deploy-ot/fuse-properties/OPENSHIFT-DEV-MOBILE-BCK-NODO1 /opt/jboss/jboss-full/etc/ --username Ramon-Fernandez --password rf637
+COPY conf /opt/jboss/jboss-full/config/
+#RUN svn checkout http://lv36papf-svncorp.swm.com.ar:8888/svn/swiss/NuevosProductos/operaciones/prepare-for-deploy/trunk/deploy-ot/fuse-properties/OPENSHIFT-DEV-MOBILE-BCK-NODO1 /opt/jboss/jboss-full/etc/ --username Ramon-Fernandez --password rf637
 
 #dependencias
 COPY pom.xml /opt/jboss/jboss-full/
