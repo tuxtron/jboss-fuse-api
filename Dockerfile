@@ -18,7 +18,7 @@ COPY script.sh /opt/jboss/jboss-full/
 
 COPY deploy/sqljdbc41.jar /opt/jboss/jboss-full/deploy/
 COPY deploy/jconn3-6.0.26312.jar /opt/jboss/jboss-full/deploy/
-#WORKDIR /opt/jboss/jboss-full/deploy
+WORKDIR /opt/jboss/jboss-full/deploy
 RUN mvn install:install-file -Dfile=sqljdbc41.jar -Dpackaging=jar -DgroupId=com.microsoft.sqlserver -DartifactId=sqljdbc4 -Dversion=4.0
 RUN mvn install:install-file -Dfile=jconn3-6.0.26312.jar -Dpackaging=jar -DgroupId=com.sybase -DartifactId=jconn3 -Dversion=6.0.26312
 
