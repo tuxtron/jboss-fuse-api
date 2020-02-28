@@ -31,6 +31,17 @@ COPY conf /opt/jboss/jboss-full/etc/
 
 #copiar jar
 COPY deploy /opt/jboss/jboss-full/deploy/
+RUN mvn install:install-file -Dfile=smg-esb-features-mobile-1.0.0-ALPHA.5.jar -Dpackaging=jar -DgroupId=smg.esb.features.mobile -DartifactId=smg-esb-features-mobile -Dversion=4.0
+RUN mvn install:install-file -Dfile=api-tracker-sdk-1.1.0-FINAL.jar -Dpackaging=jar -DgroupId=api.tracker.sdk -DartifactId=api-tracker-sdk -Dversion=4.0
+RUN mvn install:install-file -Dfile=cryptolib-1.0.0-ALPHA.3.jar -Dpackaging=jar -DgroupId=cryptolib -DartifactId=cryptolib -Dversion=4.0
+RUN mvn install:install-file -Dfile=fuse-bundle-api-flow-1.7.1-FINAL.jar -Dpackaging=jar -DgroupId=fuse.bundle.api.flow -DartifactId=fuse-bundle-api-flow -Dversion=4.0
+RUN mvn install:install-file -Dfile=fuse-bundle-api-model-1.4.2-FINAL.jar -Dpackaging=jar -DgroupId=fuse.bundle.api.model -DartifactId=fuse-bundle-api-model -Dversion=4.0
+RUN mvn install:install-file -Dfile=fuse-bundle-api-rules-1.5.0-FINAL.jar -Dpackaging=jar -DgroupId=fuse.bundle.api.rules -DartifactId=fuse-bundle-api-rules -Dversion=4.0
+RUN mvn install:install-file -Dfile=fuse-bundle-device-service-1.0.0-FINAL.jar -Dpackaging=jar -DgroupId=fuse-bundle.device.service -DartifactId=fuse-bundle-device-service -Dversion=4.0
+RUN mvn install:install-file -Dfile=fuse-bundle-ds-sybase-gps-smg-1.1.0-FINAL.jar -Dpackaging=jar -DgroupId=fuse.bundle.ds.sybase-gps.smg -DartifactId=fuse-bundle-ds-sybase-gps-smg -Dversion=4.0
+RUN mvn install:install-file -Dfile=fuse-bundle-telemedicina-adjunto-1.0.0-BETA.jar -Dpackaging=jar -DgroupId=fuse.bundle.telemedicina.adjunto -DartifactId=fuse-bundle-telemedicina-adjunto -Dversion=4.0
+
+
 
 
 EXPOSE 8181 8101 18181 1099 44444 61616 1883 5672 61613 61617 8883 5671 61614
