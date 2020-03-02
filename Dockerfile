@@ -4,7 +4,7 @@ FROM tuxtron/jboss-fuse-final
 USER root
 
 #copiar configuración
-COPY conf /opt/jboss/jboss-full/config/
+COPY conf /opt/jboss/jboss-full/etc/
 
 
 #dependencias
