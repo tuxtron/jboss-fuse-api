@@ -29,6 +29,7 @@ RUN mvn install:install-file -Dfile=sqljdbc41.jar -Dpackaging=jar -DgroupId=com.
 RUN mvn install:install-file -Dfile=jconn3-6.0.26312.jar -Dpackaging=jar -DgroupId=com.sybase -DartifactId=jconn3 -Dversion=6.0.26312
 RUN mvn install:install-file -Dfile=smg-esb-features-mobile-1.0.0-ALPHA.5.jar -Dpackaging=jar -DgroupId=smg.esb.features.mobile -DartifactId=smg-esb-features-mobile -Dversion=4.0
 
+RUN chmod -R 777 /opt/jboss/jboss-full/*
 
 EXPOSE 8181 8101 18181 1099 44444 61616 1883 5672 61613 61617 8883 5671 61614
 
