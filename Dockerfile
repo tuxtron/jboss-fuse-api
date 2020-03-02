@@ -11,15 +11,15 @@ COPY conf /opt/jboss/jboss-full/config/
 COPY pom.xml /opt/jboss/jboss-full/
 
 #script de instalacion de dependencias
-COPY script2.sh /opt/jboss/jboss-full/
+COPY script.sh /opt/jboss/jboss-full/
 
 RUN mvn install -f /opt/jboss/jboss-full/pom.xml
-RUN chmod +x /opt/jboss/jboss-full/script2.sh
+RUN chmod +x /opt/jboss/jboss-full/script.sh
 
 #COPY deploy/sqljdbc41.jar /opt/jboss/jboss-full/deploy/
 #COPY deploy/jconn3-6.0.26312.jar /opt/jboss/jboss-full/deploy/
 #WORKDIR /opt/jboss/jboss-full/deploy
-RUN /opt/jboss/jboss-full/script2.sh
+RUN /opt/jboss/jboss-full/script.sh
 
 
 #copiar jar
