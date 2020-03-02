@@ -8,6 +8,7 @@ sleep 60 && \
 /opt/jboss/jboss-full/bin/client -u admin -p admin features:install camel-xmljson/2.15.1.redhat-621084 && \
 /opt/jboss/jboss-full/bin/client -u admin -p admin features:install camel-http4/2.15.1.redhat-621084 && \
 /opt/jboss/jboss-full/bin/client -u admin -p admin features:install camel-jsonpath/2.15.1.redhat-621084 && \
+/opt/jboss/jboss-full/bin/client -u admin -p admin features:install camel-jackson/2.15.1.redhat-621084 && \
 /opt/jboss/jboss-full/bin/client -u admin -p admin features:install cxf-rs-security-cors/3.0.4.redhat-621084 && \
 /opt/jboss/jboss-full/bin/client -u admin -p admin features:install spring-web/3.2.12.RELEASE_2 && \
 /opt/jboss/jboss-full/bin/client -u admin -p admin features:install spring-jdbc/3.2.12.RELEASE_2 && \
